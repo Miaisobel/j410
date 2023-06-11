@@ -1,0 +1,317 @@
+<!doctype html>
+
+<html>
+	
+<head>
+	
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>That's The Key A Cappella | Home</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar which disappears on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon - images are in a folder called 'fav'-->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F19E93">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><img src="img/logo.png" width="75" height="75" alt=""/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Home</a>
+        </li>
+	   <li>
+          <a href="#gal">Photos</a>
+		  </li>
+	  	<li>
+          <a href="#tl">Music</a>
+        </li>
+        <li>
+          <a href="#vid">Video</a>
+			</li>
+      <li>
+          <a href="#num">Competition</a>
+			</li>
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<div class="container">
+</div>
+<!--animated welcome-->
+<div class="wrapper">
+<!--animated welcome code here-->	
+</div>
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">That's The Key A Cappella</h2>
+<article>
+<p class="tab">That's The Key A Cappella is an all-vocal music group. The group consists of students from Cal Poly San Luis Obispo who sing covers of songs without instruments. Found in 2009, the group has a sweet style, kicking repertoire, and chaotic good energy.<br><br>Most of the pictures and people you will see here are from the 2022-2023 school year. After a quarantine-filled spring quarter the year prior, the group is back in action and ready for anything!</p>
+<p class="tab"><a class="btn" href="#gal">Rehearse With Us</a></p>
+</article>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">Rehearsals + Recording</h2>
+<article><!--beginning of article-->
+<p class="tab">While the soloists went to record with the Honeyboys lead singer Ari, the rest of the group went through a normal rehearsal in the Construction Innovations Center classrooms.</p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/1.jpg" width="100%" height="100%" alt="Founded in 2009, That's The Key A Cappella is one of Cal Poly's many a cappella groups. It is a mixed SATB group that is known for doing a rendition of 'Radioactive' by Imagine Dragons each year. This is the 2022-2023 group which consisted of 21 members."/>
+<img src="img/2.jpg" width="100%" height="100%" alt="Darren Hartono, a computer science sophomore, is a tenor in the group and will be the music director next year. 'I think being music director will be an interesting experience going forward,' Hartono said. 'It will definitely be hard, and I’m thankful to have good people helping me.'"/>
+<img src="img/3.jpg" width="100%" height="100%" alt="Third-year Michael Dalsin, a physics major, warms up the group by focusing on different vowel sounds. As the current music director, he gives the group advice but emphasizes that making mistakes is okay. 'I love seeing individual members improve their singing and the group as a whole sounding more cohesive,' Dalsin said."/>
+<img src="img/4.jpg" width="100%" height="100%" alt="The members mark up their sheet music and highlight sections that need to be worked on. Some members print out 20+ pages worth of music to prepare. The most common markings seen are dynamics, pronunciation, and what beat to stop on."/>
+<img src="img/5.jpg" width="100%" height="100%" alt="The soprano section goofs off in between songs to keep the mood light. Business sophomore Prisha Agarwal and animal science sophomore Danielle Palacpac became friends through the club and hang out outside of rehearsals frequently."/>
+<img src="img/6.jpg" width="100%" height="100%" alt="To end each rehearsal, the group circles up and says, 'Hands in, booties out!' However, this time, the group decided to yell, 'Booties out, hands in,' to change it up. They practice twice a week for two hours each rehearsal, so the members grow close fast."/>
+<img src="img/7.jpg" width="100%" height="100%" alt="Off-campus, a small group consisting of three soloists record their solos for the EP. TTK President Jayme Schick gets ready to record her solo on 'Radioactive,' with the other music director eagerly waiting. 'A really awesome part about recording is that we are able to add parts that are not possible to perform live,' the third-year biological sciences major said. "/>
+<img src="img/8.jpg" width="100%" height="100%" alt="Because the producer was sick, the group was unable to record in the studio. Instead, they do it at a friend's house using blankets to soundproof the room. 'We were able to record me singing a new line over a previous recording of me,' Schick said. 'That enabled us to embellish on the solo, and to fill out the song more.'"/>
+<img src="img/9.jpg" width="100%" height="100%" alt="Ari Eisenberg, the leader singer for the SLO local band known as The Honeyboys, helps the soloists record and gives them advice. 'Nothing feels rushed or brushed over with him, I feel that he really sees and shares our vision for the EP,' Schick said."/>
+<img src="img/10.jpg" width="100%" height="100%" alt="The last to record is manufacturing engineer sophomore Domenic Iovine. He also has a solo on “Radioactive” but is rapping the Kendrick Lamar verses. Iovine takes off the headphone from one ear to hear himself and Ari better. Just as the last line says, TTK is 'gettin' better with time.'"/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a class="btn" href="#tl">Song of Choice</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+	
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">Testimonials</h2>
+<article>
+  <p class="tab">Click on images to hear what their favorite song is for the school year<br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/1.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_2">
+    <source src="audio/2.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_3">
+	<source src="audio/3.mp3" type="audio/mpeg" />
+</audio>
+        
+<img src="img/rollover/1.gif" width=50% height=75% class="rollover" alt="description" onMouseOver="this.src='img/rollover/1.jpg'" width= 50% height=50% onMouseOut="this.src='img/rollover/1.gif'" width= 50% height=50% onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/2.gif" width=50% height=75% class="rollover" alt="description" onMouseOver="this.src='img/rollover/2.jpg'" width= 50% height=50% onMouseOut="this.src='img/rollover/2.gif'" width= 50% height=50% onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/3.gif" width=50% height=75% class="rollover" alt="description" onMouseOver="this.src='img/rollover/3.jpg'" width= 50% height=50% onMouseOut="this.src='img/rollover/3.gif'" width= 50% height=50% onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+	</div>
+</div>
+<p class="tab"><a class="btn" href="#vid">Interviews</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row">
+<h2 id="vid">Arranging Music</h2>
+<article>
+<p class="tab">Ever wanted to write your own song? Music director Michael Dalsin goes through his process for arranging covers.</p>	
+<video width="100%" height="100%" poster="img/poster.jpg" controls>
+<source src="img/TTK Video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a class="btn" href="#num">Concerts</a></p>
+</article>
+</div>
+<!--end of video section-->
+
+<!--beginning of infographic section-->
+<div class="row whiteBG">
+<h2 id="num">Competition</h2>
+<article>
+<p class="tab">Besides their winter and spring showcases, the group competes in the ICCAs. Learn more <a id="link" href="https://varsityvocals.com/competitions/" target="_blank">here!</a></p>
+    <img src="img/infographic.png" style="max-width: 100%; height: auto;">
+<!--infographic embed code here-->
+</article>
+</div>
+<!--end of infographic section-->
+	
+<!--beginning of footer-->
+<footer>TTK A Cappella | San Luis Obispo, CA | <a href="mailto: miaiscollege20@gmail.com Subject=Inquiry" target="_top">Send Email</a> | Copyright 2023 | Site by Mia-Isobel Craig 
+</footer>
+<!--end of footer-->
+	
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+
+</html>
